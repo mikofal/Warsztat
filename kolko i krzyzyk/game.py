@@ -2,8 +2,9 @@ import numpy as np
 import time
 
 array=np.empty((3,3),dtype='U1')
-print("| 1 | 2 | 3 |\n| 4 | 5 | 6 |\n| 7 | 8 | 9 |\n")
+
 while True:
+    print("| 1 | 2 | 3 |\n| 4 | 5 | 6 |\n| 7 | 8 | 9 |\n")
     print("-----------------------------------------------------------------------------------------------------")
     player1=input("Ruch gracza 1\n")
     if player1 =='1' and array[0,0]=="":
@@ -58,7 +59,7 @@ while True:
     if (array[0,0]=="O" and array[0,1]=="O" and array[0,2]=="O") or (array[1,0]=="O" and array[1,1]=="O" and array[1,2]=="O") or (array[2,0]=="O" and array[2,1]=="O" and array[2,2]=="O") or (array[0,0]=="O" and array[1,0]=="O" and array[2,0]=="O") or (array[0,1]=="O" and array[1,1]=="O" and array[2,1]=="O") or (array[0,2]=="O" and array[1,2]=="O" and array[2,2]=="O") or (array[0,0]=="O" and array[1,1]=="O" and array[2,2]=="O") or (array[0,2]=="O" and array[1,1]=="O" and array[2,0]=="O"):
         print("GRACZ 2 WYGRAŁ!")
         break
-    print(array)
+    print(array,"\n")
     time.sleep(1)
 
     
