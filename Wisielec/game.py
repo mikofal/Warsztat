@@ -1,9 +1,123 @@
 import random
 import os
 import time
-import importlib
 
-module=importlib.import_module("rysunki")
+
+
+
+rys2=''' ___________.._______
+| .__________))______|
+| | / /      ||
+| |/ /       ||
+| | /        ||.-''.
+| |/         |/  _  \\
+| |          ||  `/,|
+| |          (\\`_.'
+| |         .-`--'.
+| |        // . . \\
+| |       // |   | \\
+| |      //  | . |  \\
+| |     ')   |   |   (`
+| |          ||'||
+| |          || ||
+| |          || ||
+| |          || ||
+| |         / | | \
+""""""""""|_`-' `-' |"""|
+|"|"""""""\ \       '"|"|
+| |        \ \        | |
+: :         \ \       : :
+. .          `'       . .'''
+
+
+
+
+rys3=''' ___________.._______
+| .__________))______|
+| | / /      
+| |/ /       
+| | /        
+| |/         
+| |          
+| |          
+| |       
+| |        
+| |      
+| |     
+| |     
+| |          
+| |          
+| |          
+| |          
+| |         
+""""""""""|          |"""|
+|"|"""""""\ \       '"|"|
+| |        \ \        | |
+: :         \ \       : :
+. .          `'       . .'''
+
+
+
+
+rys4=''' ___________.._______
+| .__________))______|
+| | / /      ||
+| |/ /       ||
+| | /        ||
+| |/         ||
+| |          ||
+| |          
+| |       
+| |        
+| |      
+| |     
+| |     
+| |          
+| |          
+| |          
+| |          
+| |         
+""""""""""|          |"""|
+|"|"""""""\ \       '"|"|
+| |        \ \        | |
+: :         \ \       : :
+. .          `'       . .'''
+
+
+rys5='''
+| |
+| |       
+| |      
+| |         
+| |         
+| |          
+| |          
+| |       
+| |        
+| |      
+| |     
+| |     
+| |          
+| |          
+| |          
+| |          
+| |         
+""""""""""|          |"""|
+|"|"""""""\ \       '"|"|
+| |        \ \        | |
+: :         \ \       : :
+. .          `'       . .'''
+
+
+
+rys6='''      
+""""""""""|          |"""|
+|"|"""""""\ \       '"|"|
+| |        \ \        | |
+: :         \ \       : :
+. .          `'       . .'''
+
+
 def dic():
     owoce = ["banan", "gruszka", "jabłko", "śliwka", "arbuz", "malina", "truskawka", "kiwi", "winogrono", "mandarynka"]
     kolory = ["czerwony", "zielony", "żółty", "fioletowy", "pomarańczowy", "granatowy", "różowy", "brązowy", "czarny", "biały"]
@@ -57,15 +171,15 @@ def start_game():
     tab=['_' for _ in range(word_length)]
     while True:
         if zycia==4:
-            print(module.rys6)
+            print(rys6)
         elif zycia==3:
-            print(module.rys5)
+            print(rys5)
         elif zycia==2:
-            print(module.rys3)
+            print(rys3)
         elif zycia==1:
-            print(module.rys4)
+            print(rys4)
         elif zycia==0:
-            print(module.rys2)
+            print(rys2)
             print("Poprawne hasło: ", word)
             menu_interface()
             break
@@ -120,3 +234,6 @@ def menu_interface():
             menu_interface()
 
 menu_interface()
+
+
+
