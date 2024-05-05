@@ -48,49 +48,75 @@ def dic():
         random_word=random.choice(plants)
     return random_kategory,random_word
 
-category,word=dic()
-zycia=5
-word_length=len(word)
-tab=['_' for _ in range(word_length)]
-while True:
-    if zycia==4:
-        print(module.rys6)
-    elif zycia==3:
-        print(module.rys5)
-    elif zycia==2:
-        print(module.rys3)
-    elif zycia==1:
-        print(module.rys4)
-    elif zycia==0:
-        print(module.rys2)
-        break
-    print("Kategoria: ",category)
-    print("Pozostałe życia: ", zycia)
-    print(' '.join(tab))
-    literka=input("Wpisz literę ")
-    position=[]
-    index=0
-    if len(literka)==1 and literka.isalpha():
-        if literka in word:
-            while True:
-                try:
-                    index=word.index(literka,index)
-                    position.append(index)
-                    index+=1
-                except ValueError:
-                    break
-            for index in position:
-                tab[index]=literka
-        else:
-            zycia-=1
-        if not "_" in tab:
-            print("you win!")
-            print(word)
+
+def start_game():
+    used_letters=[]
+    category,word=dic()
+    zycia=5
+    word_length=len(word)
+    tab=['_' for _ in range(word_length)]
+    while True:
+        if zycia==4:
+            print(module.rys6)
+        elif zycia==3:
+            print(module.rys5)
+        elif zycia==2:
+            print(module.rys3)
+        elif zycia==1:
+            print(module.rys4)
+        elif zycia==0:
+            print(module.rys2)
+            print("Poprawne hasło: ", word)
+            menu_interface()
             break
-        os.system("cls")
+        print("Kategoria: ",category)
+        print("Pozostałe życia: ", zycia)
+        print("Użyte literki: "," ".join(used_letters))
+        print(' '.join(tab))
+        literka=input("Wpisz literę ")
+        used_letters.append(literka)
 
-    else:
-        print("błąd!")
-        time.sleep(1)
-        os.system("cls")
+        position=[]
+        index=0
+        if len(literka)==1 and literka.isalpha():
+            if literka in word:
+                while True:
+                    try:
+                        index=word.index(literka,index)
+                        position.append(index)
+                        index+=1
+                    except ValueError:
+                        break
+                for index in position:
+                    tab[index]=literka
+            else:
+                zycia-=1
+            if not "_" in tab:
+                os.system('cls')
+                print("Kategoria: ",category)
+                print("Pozostałe życia: ",zycia)
+                print(' '.join(tab))
+                print("WYGRAŁEŚ!")
+                menu_interface()
+            os.system("cls")
 
+        else:
+            print("błąd!")
+            time.sleep(1)
+            os.system("cls")
+
+print("WITAJ W GRZE!")
+def menu_interface():
+    menu=input("1-Zagraj\n2-Wyjdź z gry\n")
+    while True:
+        if menu=='1':
+            os.system("cls")
+            start_game()
+            break
+        elif menu=='2':
+            exit(1)
+        else:
+            print("błąd")
+            menu_interface()
+
+menu_interface()
